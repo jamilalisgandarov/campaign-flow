@@ -4,8 +4,33 @@ export const config: CreationConfig = {
   pages: [
     {
       id: 94,
-      type: "root",
-      name: "flow_type", // Fully automated or partially assisted
+      type: "custom",
+      title: "What do you want to achieve?",
+      name: "flow",
+      fields: [
+        {
+          type: "select_box",
+          id: 11,
+          name: "type",
+          options: [
+            {
+              title: "Automated",
+              icon: "https://via.placeholder.com/50",
+              description: "We'll do all the work for you",
+              value: "automated",
+            },
+            {
+              title: "Assisted",
+              icon: "https://via.placeholder.com/50",
+              description: "You'll do all the work",
+              value: "assisted",
+            },
+          ],
+          rules: {
+            required: true,
+          },
+        },
+      ],
     },
     {
       id: 11,
@@ -44,9 +69,19 @@ export const config: CreationConfig = {
       name: "has_social_media",
       fields: [
         {
-          type: "yes_no",
+          type: "radio",
+          options: [
+            {
+              label: "Yes",
+              value: "yes",
+            },
+            {
+              label: "No",
+              value: "no",
+            },
+          ],
           id: 332,
-          label: "Name",
+          label: "Has Account Label",
           name: "has_account",
           rules: {
             required: true,
@@ -155,7 +190,7 @@ export const config: CreationConfig = {
     id: 94, // Flow Selection
     logic: {
       type: "field",
-      refField: "flow_type.type", // [pageName].[fieldName]
+      refField: "flow.type",
       condition: {
         operation: "is",
         actions: [

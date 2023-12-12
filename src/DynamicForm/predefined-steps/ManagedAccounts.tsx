@@ -1,5 +1,15 @@
+import { Flex } from "@radix-ui/themes";
 import React from "react";
 
-export const ManagedAccount: React.FC = () => {
-  return <h1>This is ManagedAccount page!</h1>;
+interface Props {
+  onNext: () => void;
+}
+
+export const ManagedAccounts: React.FC<Props> = ({ onNext }) => {
+  return (
+    <Flex direction="column">
+      <h1>ManagedAccounts</h1>
+      <button onClick={onNext}>Next</button>
+    </Flex>
+  );
 };
