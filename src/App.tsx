@@ -1,39 +1,28 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { Avatar, Box, Card, Flex, Text, Theme } from "@radix-ui/themes";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>React + Vite</h1>
-      <h2>On CodeSandbox!</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR.
-        </p>
-
-        <p>
-          Tip: you can use the inspector button next to address bar to click on
-          components in the preview and open the code in the editor!
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Theme>
+      <Card style={{ maxWidth: 240 }}>
+        <Flex gap="3" align="center">
+          <Avatar
+            size="3"
+            src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
+            radius="full"
+            fallback="TT"
+          />
+          <Box>
+            <Text as="div" size="2" weight="bold">
+              Teodros Girmay
+            </Text>
+            <Text as="div" size="2" color="gray">
+              Engineering
+            </Text>
+          </Box>
+        </Flex>
+      </Card>
+    </Theme>
   );
 }
 
